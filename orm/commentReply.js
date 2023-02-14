@@ -1,6 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
    
     const CommentReply = sequelize.define("commentReply", {
+      id:{
+        type:DataTypes.INTEGER,
+        primaryKey:true,
+        autoIncrement:true,
+      },
       content: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -12,10 +17,12 @@ module.exports = (sequelize, DataTypes) => {
       userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        foreignKey:true
       },
       commentId: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        foreignKey:true
       },
     });
   
