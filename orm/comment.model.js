@@ -20,3 +20,4 @@ module.exports = (sequelize, DtaTypes) => {
   
     return Comment;
   };
+  console.log("akram");
