@@ -2,6 +2,7 @@
 
 module.exports = (sequelize, DtaTypes) => {
   console.log (sequelize)
+  
     const Comment = sequelize.define("comments", {
       text: {
         type: DataTypes.STRING,
