@@ -1,11 +1,17 @@
 // Define and export the sequelize model that represents the table users.
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, sequelize) => {
   const User = sequelize.define("users", {
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    userName: {
+      type: sequelize.STRING,
       unique: true,
+    },
+    email: {
+      type: sequelize.STRING,
+      unique: true,
+    },
+    password: {
+      type: sequelize.INT ,
     },
   });
 
