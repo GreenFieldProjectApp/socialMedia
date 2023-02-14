@@ -1,11 +1,6 @@
-// Define and export the sequelize model that represents the table posts.
-
 module.exports = (sequelize, DataTypes) => {
-    const Post = sequelize.define("post", {
-      title: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+   
+    const CommentReply = sequelize.define("commentReply", {
       content: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -18,7 +13,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      commentId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
     });
   
-    return Post;
+    return CommentReply;
   };

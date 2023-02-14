@@ -1,17 +1,21 @@
 // Define and export the sequelize model that represents the table comments.
 
-module.exports = (sequelize, DtaTypes) => {
+module.exports = (sequelize, DataTypes) => {
    
-    const Comment = sequelize.define("comments", {
-      text: {
+    const Comment = sequelize.define("comment", {
+      content: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      commenterId: {
+      userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      postId: {
+      likes: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      commentId: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
