@@ -5,7 +5,6 @@ const { User } = require("../orm");
 module.exports = {
   //method to fetch all users from the blog database.
   getAllUsers: async (req, res) => {
-    //seif change something
     try {
       const users = await User.findAll({ order: [["createdAt", "DESC"]] });
       res.status(200).json(users);
