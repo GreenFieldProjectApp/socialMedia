@@ -1,8 +1,7 @@
 // Define and export the sequelize model that represents the table comments.
 
 module.exports = (sequelize, DtaTypes) => {
-  console.log (sequelize)
-  
+   
     const Comment = sequelize.define("comments", {
       text: {
         type: DataTypes.STRING,
@@ -20,4 +19,3 @@ module.exports = (sequelize, DtaTypes) => {
   
     return Comment;
   };
-  console.log("akram");
