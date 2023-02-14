@@ -21,17 +21,18 @@ db.Sequelize = Sequelize;
 db.User = require("./user.model")(sequelize, DataTypes);
 db.Post = require("./post.model")(sequelize, DataTypes);
 db.Comment = require("./comment.model")(sequelize, DataTypes);
+db.CommentReply= require("./CommentReply.model")(sequelize, DataTypes);
 
 db.User.hasMany(db.Post, {
-  foreignKey: "posterId",
+  foreignKey: "userId",
 });
 db.User.hasMany(db.Comment, {
-  foreignKey: "commenterId",
+  foreignKey: "userId",
 });
 
 db.Post.belongsTo(db.User, {
-  as: "poster",
-  foreignKey: "posterId",
+  as: "user",
+  foreignKey: "userId",
   onDelete: "CASCADE",
 });
 db.Post.hasMany(db.Comment, {
@@ -39,8 +40,8 @@ db.Post.hasMany(db.Comment, {
 });
 
 db.Comment.belongsTo(db.User, {
-  as: "commenter",
-  foreignKey: "commenterId",
+  as: "user",
+  foreignKey: "userId",
   onDelete: "CASCADE",
 });
 db.Comment.belongsTo(db.Post, {
@@ -50,7 +51,7 @@ db.Comment.belongsTo(db.Post, {
 
 db.sequelize
   .authenticate()
-  .then(() => console.log("Connection has been established successfully."))
-  .catch((err) => console.error("Unable to connect to the database:", err));
+  .then(() => console.log("Connected"))
+  .catch((err) => console.error("connection lost", err));
 
 module.exports = db;

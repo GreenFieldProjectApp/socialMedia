@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      commentId: {
+      postId: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
