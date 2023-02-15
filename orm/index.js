@@ -29,6 +29,9 @@ db.User.hasMany(db.Post, {
 db.User.hasMany(db.Comment, {
   foreignKey: "userId",
 });
+db.User.hasMany(db.CommentReply,{
+  foreignKey: "userId",
+})
 
 db.Post.belongsTo(db.User, {
   as: "user",
@@ -46,6 +49,18 @@ db.Comment.belongsTo(db.User, {
 });
 db.Comment.belongsTo(db.Post, {
   foreignKey: "postId",
+  onDelete: "CASCADE",
+});
+db.Comment.hasMany(db.CommentReply, {
+  foreignKey: "commentID",
+});
+db.CommentReply.belongsTo(db.User, {
+  as: "user",
+  foreignKey: "userId",
+  onDelete: "CASCADE",
+});
+db.CommentReply.belongsTo(db.Comment, {
+  foreignKey: "commentId",
   onDelete: "CASCADE",
 });
 
