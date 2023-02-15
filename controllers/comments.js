@@ -25,14 +25,14 @@ module.exports = {
       const comment = await Comment.create(req.body);
       res.status(201).json(comment);
     } catch (error) {
-      res.status(409).send(error);
+      res.status(500).send(error);
     }
   },
   updateComment: async (req, res) => {
     try {
-      const comment = await Comment.update({
-        where: {commentId: req.params.id}
-      },req.body);
+      const comment = await Comment.update(req.body,{
+        where: {id: req.params.id}
+      });
       res.status(201).json(comment);
     } catch (error) {
       res.status(409).send(error);
