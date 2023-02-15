@@ -15,16 +15,6 @@ module.exports = {
       res.status(500).send(error);
     }
   },
-  //method to add a user to the database via the respective model function.
-  addUser: async (req, res) => {
-    try {
-      const user = await User.create(req.body);
-      res.status(201).json(user);
-    } catch (error) {
-      res.status(500).send(error);
-    }
-  },
-  //method to get one user by id.
   getOneUser: async (req, res) => {
     try {
       const user = await User.findByPk({
@@ -35,6 +25,17 @@ module.exports = {
       res.status(500).send(error);
     }
   },
+  //method to add a user to the database via the respective model function.
+  addUser: async (req, res) => {
+    try {
+      const user = await User.create(req.body);
+      res.status(201).json(user);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  },
+  //method to get one user by id.
+
   updateOneUser: async (req, res) => {
     try {
       const users = await User.update({

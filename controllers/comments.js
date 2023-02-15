@@ -9,8 +9,8 @@ module.exports = {
       const comments = await Comment.findAll({
         where: { postId: req.params.id },
         order: [["createdAt", "ASC"]],
-        include: [{model: CommentReply, as :"content", attributes:[]}],
-        include: [{ model: User, as: "user", attributes: ["fullname"] },
+        //include: [{model: CommentReply, as :"content", attributes:[]}],
+        include: [{ model: User, as: "user", attributes: ["fullName"] },
       ],
 
       });

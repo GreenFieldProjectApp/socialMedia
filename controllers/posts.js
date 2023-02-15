@@ -42,10 +42,10 @@ module.exports = {
             order: [["date", "ASC"]],
             attributes: { exclude: ['postId', 'userId'] },
             include: [
-              { model: User, as: "user", attributes: ["username"] },
+              { model: User, as: "user", attributes: ["fullName"] },
             ],
           },
-          { model: User, as: "user", attributes: [["username", "author"]] },
+//{ model: User, as: "user", attributes: [["username", "author"]] },
         ],
       });
       res.status(200).json(posts);
@@ -59,7 +59,7 @@ module.exports = {
     try {
       const post = await Post.findByPk( {
         where : {postId: req.params.id},
-        include: [{ model: User, as: "user", attributes: ["username"] }],
+        include: [{ model: User, as: "user", attributes: ["fullName"] }],
       });
       res.status(200).json(post);
     } catch (error) {
