@@ -7,22 +7,22 @@ module.exports = {
   getAllPosts: async (req, res) => {
     try {
       const posts = await Post.findAll({
-        
+     
         order: [["createdAt", "ASC"]],
         attributes: { exclude: ['userId'] },
         include: [
           {
             model: Comment,
-            separate: true,
+        //     separate: true, whyyyyy whyy ????????
             order: [["date", "ASC"]],
             attributes: { exclude: ['postId', 'userId'] },
             include: [
-              { model: User, as: "user", attributes: ["fullname"] },
+              { model: User, as: "user", attributes: ["fullName"] },
             ],
           },
-          //{ model: User, as: "user", attributes: [["fullname", "author"]] },
+        //   //{ model: User, as: "user", attributes: [["fullName", "author"]] },
         ]
-      });
+      })
       res.status(200).json(posts);
     } catch (error) {
       console.log(error);
@@ -36,16 +36,23 @@ module.exports = {
         order: [["createdAt", "ASC"]],
         attributes: { exclude: ['userId'] },
         include: [
+          { model: User,
+        include: [
+              { model: User, as: "user", attributes: ["fullName"] },
+            ],
+             },
+
+
           {
             model: Comment,
             separate: true,
-            order: [["date", "ASC"]],
+            order: [["createdAt", "ASC"]],
             attributes: { exclude: ['postId', 'userId'] },
             include: [
               { model: User, as: "user", attributes: ["fullName"] },
             ],
           },
-//{ model: User, as: "user", attributes: [["username", "author"]] },
+         
         ],
       });
       res.status(200).json(posts);
@@ -54,18 +61,8 @@ module.exports = {
       res.status(500).send("Failed to load resource");
     }
   },
-  //method to get one post by id.
-  getOnePost: async (req, res) => {
-    try {
-      const post = await Post.findByPk( {
-        where : {postId: req.params.id},
-        include: [{ model: User, as: "user", attributes: ["fullName"] }],
-      });
-      res.status(200).json(post);
-    } catch (error) {
-      res.status(500).send(error);
-    }
-  },
+ 
+
   //method to add a post to the database via the respective model function.
   addPost: async (req, res) => {
     try {
@@ -77,9 +74,9 @@ module.exports = {
   },
   updatePost: async (req, res) => {
     try {
-      const post = await Post.update({
-        where : {postId : req.params.id}
-      }, req.body);
+      const post = await Post.update(req.body,{
+        where : {id : req.params.id}
+      });
       res.status(201).json(post);
     } catch (error) {
       res.status(409).send(error);
@@ -88,7 +85,7 @@ module.exports = {
   deleteOnePost: async (req, res) => {
     try {
       const post = await Post.destroy({
-        where : {postId : req.params.id},
+        where : {id : req.params.id},
       });
       res.status(201).json(post);
     } catch (error) {
