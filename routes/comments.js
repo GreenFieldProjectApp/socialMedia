@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // Require controller modules.
-const { getAllComments, addComment } = require('../controllers/comments');
+const { getAllComments, addComment ,updateComment,deleteComment} = require('../controllers/comments');
 
 /// POSTS ROUTES ///
 
@@ -10,6 +10,7 @@ const { getAllComments, addComment } = require('../controllers/comments');
 router.get('/:postId', getAllComments);
 // POST request for adding a new comment.
 router.post('/add', addComment);
-
+router.put('/updateComment',updateComment)
+router.delete('/deleteComment',deleteComment)
 
 module.exports = router;
