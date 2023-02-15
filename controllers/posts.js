@@ -7,19 +7,19 @@ module.exports = {
   getAllPosts: async (req, res) => {
     try {
       const posts = await Post.findAll({
-        order: [["createdAt", "DESC"]],
-        attributes: { exclude: ['posterId'] },
+        order: [["date"]],
+        attributes: { exclude: ['userId'] },
         include: [
           {
             model: Comment,
             separate: true,
-            order: [["createdAt", "ASC"]],
-            attributes: { exclude: ['postId', 'commenterId'] },
+            order: [["date", "ASC"]],
+            attributes: { exclude: ['postId', 'userId'] },
             include: [
-              { model: User, as: "commenter", attributes: ["username"] },
+              { model: User, as: "user", attributes: ["username"] },
             ],
           },
-          { model: User, as: "poster", attributes: [["username", "author"]] },
+          { model: User, as: "user", attributes: [["username", "author"]] },
         ],
       });
       res.status(200).json(posts);
@@ -31,12 +31,12 @@ module.exports = {
   //method to get one post by id.
   getOnePost: async (req, res) => {
     try {
-      const post = await Post.findByPk(req.params.idpost, {
-        include: [{ model: User, as: "poster", attributes: ["username"] }],
+      const post = await Post.findByPk(req.params.id, {
+        include: [{ model: User, as: "user", attributes: ["username"] }],
       });
       res.status(200).json(post);
     } catch (error) {
-      res.status(500).send("Failed to load resource");
+      res.status(500).send(error);
     }
   },
   //method to add a post to the database via the respective model function.
@@ -49,4 +49,3 @@ module.exports = {
     }
   },
 };
-//new hello
