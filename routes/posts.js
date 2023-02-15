@@ -8,14 +8,12 @@ const { getAllPosts, addPost, getOnePost ,updatePost, deleteOnePost,deleteAllPos
 
 //GET request to fetch all posts. NOTE This must come before route for id.
 router.get('/getAllposts', getAllPosts);
-// GET request for one post.
-router.get('/:idpost', getOnePost);
 // POST request for creating a new post.
 router.post('/addOnePost', addPost);
-router.put('/updateOnePost',updatePost)
-router.delete('/deleteOnePost',deleteOnePost)
+router.put('/updateOnePost/:id',updatePost)
+router.delete('/deleteOnePost/:id',deleteOnePost)
 router.delete('/deleteAllPosts',deleteAllPosts)
-router.get('/getUserPosts',getUserPosts)
+router.get('/getUserPosts/:id',getUserPosts)
 
 
 module.exports = router;

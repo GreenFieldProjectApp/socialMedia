@@ -12,8 +12,8 @@ router.get('/getAllUsers', getAllUsers);
 router.get('/:iduser', getOneUser);
 // POST request for creating a user.
 router.post('/add', addUser);
-router.put('/updateUser', updateOneUser);
-router.delete('/deleteUser',deleteOneUser)
+router.put('/updateUser/:id', updateOneUser);
+router.delete('/deleteUser/:id',deleteOneUser)
 
 
 module.exports = router;

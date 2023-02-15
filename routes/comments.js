@@ -7,10 +7,10 @@ const { getAllComments, addComment ,updateComment,deleteComment} = require('../c
 /// POSTS ROUTES ///
 
 //GET request to fetch all comments for one specific post.
-router.get('/:postId', getAllComments);
+router.get('/:id', getAllComments);
 // POST request for adding a new comment.
 router.post('/add', addComment);
-router.put('/updateComment',updateComment)
-router.delete('/deleteComment',deleteComment)
+router.put('/updateComment/:id',updateComment)
+router.delete('/deleteComment/:id',deleteComment)
 
 module.exports = router;
