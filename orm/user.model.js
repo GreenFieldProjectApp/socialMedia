@@ -15,13 +15,12 @@ module.exports = (sequelize, DataTypes) => {
      picture: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue:"data:image/png;base64"
     
     }, 
      phoneNumber: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      
+      allowNull: false,
+      unique: true,
     }, 
      password: {
       type: DataTypes.STRING,
