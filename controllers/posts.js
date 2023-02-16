@@ -36,11 +36,11 @@ module.exports = {
         order: [["createdAt", "ASC"]],
         attributes: { exclude: ['userId'] },
         include: [
-          { model: User,
-        include: [
-              { model: User, as: "user", attributes: ["fullName"] },
-            ],
-             },
+        //   { model: User,
+        //  include: [
+        //       { model: User, as: "user", attributes: ["fullName"] },
+        //      ],
+        //      },
 
 
           {
