@@ -16,12 +16,12 @@ module.exports = (sequelize, DataTypes) => {
     }, 
      picture: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     
     }, 
      phoneNumber: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       unique: true,
     }, 
      password: {
