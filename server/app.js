@@ -1,5 +1,5 @@
 const express = require('express');
-
+const cors = require('cors');
 //Create an Express App
 const app = express();
 
@@ -11,7 +11,7 @@ const commentsRoute = require('./routes/comments');
 //Middleware to parse incoming requests with JSON and urlencoded payloads
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-
+app.use(cors());
 //Add Routes to the middleware handling path, specifying the respective URL path
 app.use('/api/posts', postsRoute);
 app.use('/api/users', usersRoute);
