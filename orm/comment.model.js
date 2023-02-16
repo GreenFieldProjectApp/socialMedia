@@ -10,13 +10,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       content: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
-      date: {
-        type:DataTypes.DATE,
-        allowNull: false,
-        defaultValue: sequelize.NOW
-      },
+     
       likes: {
         type: DataTypes.INTEGER,
         allowNull: false,

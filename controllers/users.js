@@ -38,9 +38,9 @@ module.exports = {
 
   updateOneUser: async (req, res) => {
     try {
-      const users = await User.update({
-        where: {userId: req.params.id},
-      }, req.body);
+      const users = await User.update(req.body,{
+        where: {id: req.params.id},
+      });
       res.status(200).json(users);
     } catch (error) {
       res.status(500).send(error);
@@ -48,7 +48,7 @@ module.exports = {
   },
   deleteOneUser: async (req, res) => {
     try {
-      const users = await User.destroy(req.params.id);
+      const users = await User.destroy({where:{id:req.params.id}});
       res.status(200).json(users);
     } catch (error) {
       res.status(500).send(error);
