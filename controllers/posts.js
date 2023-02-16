@@ -20,7 +20,7 @@ module.exports = {
               { model: User, as: "user", attributes: ["fullName"] },
             ],
           },
-        //   //{ model: User, as: "user", attributes: [["fullName", "author"]] },
+        //   //{ model: User, as: "user", attributes: [["fullName", "author"]] }
         ]
       })
       res.status(200).json(posts);
