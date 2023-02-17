@@ -1,14 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
+
+button,input{
+  font-family: 'Montserrat', sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+    
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
-  
+ 
+}
+.home-header{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+.home-header h2 {
+  color: blue;
+  font-size: 2rem;
+}
+.home-header h1 {
+  color: blue;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.home-header span {
+  color: rgb(184, 132, 63);
+}
+.home-header p {
+  color: rgb(198, 109, 68);
+  font-weight: 500;
+}
+.signin form {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #2d2d2d;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #888888;
+  text-align: center;
+}
 
-  
+.signin h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f5f3f3;
+}
+
+.signin label {
+  display: inline-block;
+  text-align: left;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.signin input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 1px solid #f4f2f2;
+  background-color: #007AA5;
+}
+
+.signin button[type="submit"] {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.signin button[type="submit"]:hover {
+  background-color: #007AA5;
 }
 
 * {
