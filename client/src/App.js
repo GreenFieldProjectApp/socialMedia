@@ -36,7 +36,7 @@ const getPosts = () => {
        
           <ul className="list">
             <li >
-              <a href="/ ">Home</a>
+              <a href="/Home">Home</a>
             </li>
             <li >
               <a href="/seif">Profile</a>
