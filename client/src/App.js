@@ -1,13 +1,22 @@
 import React, { useState , useEffect } from "react";
-import Form from "./components/form";
-import {BrowserRouter, Routes,Route} from 'react-router-dom'
+// import Form from "./components/form";
+import {BrowserRouter, Routes,Route  } from 'react-router-dom'
 import axios from "axios";
 import Posts from './components/posts.js'
+import Register from './components/register.js'
+import FirstLook from "./components/firstLook";
+import Navbar from "./components/navbar";
+import Form from './components/form.js'
+
 
 
 const App = () => {
 
 const [data , setData] = useState([])
+
+
+
+
 
 
 
@@ -24,35 +33,21 @@ const getPosts = () => {
 
 
   return (
+
   <BrowserRouter>
   <div className="App">
     
-       <nav className="nav">
-          <h1 className="logo" >
-            Blog <span>App</span>
-          </h1>
-          
        
-          <ul className="list">
-            <li >
-              <a href="/">Home</a>
-            </li>
-            <li >
-              <a href="/seif">Profile</a>
-            </li>
-            <li>
-              <a href="/hsm">Create Blog</a>
-            </li>
-            <li>
-              <a href="/alaa">About Us</a>
-            </li>
-          </ul>
-        </nav>
         
         <Routes>
-          <Route path='/hsm' element ={<Form/>}/>
-          <Route path='/' element ={<Posts data = {data}/>}/>
-         
+          
+          <Route path='/posts' element ={<Posts data = {data} />} />
+          <Route path="/" element={<FirstLook/>}/>
+          <Route path="/register" element={<Register/>}/>
+          <Route path="/navbar" element={<Navbar/>}/>
+          <Route path="/form" element={<Form/>}/>
+          
+          
           
         </Routes>
         </div>
