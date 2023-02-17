@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+ 
+  background-color: #00000025;
   
 
   
@@ -54,8 +55,8 @@ code {
 }
 
 span{
-  color: brown;
-  font-size: 25px;
+  color: #4CAF50;
+  font-size: 35px;
 }
 
 .card {
@@ -84,10 +85,171 @@ span{
 
 .input-field{
   border-bottom: 2px solid rgba(#999, 0.25);
-  font-size: 18px;
-  padding: 7px;
+  font-size: 10px;
+  padding: 2px;
   border-radius: 3px;
 
 }
 
-
+.post {
+  width: 590px;
+  min-height: 250px;
+  margin: auto;
+  margin-top: 10px;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 20px 60px;
+  box-shadow: 0 0 1em #80808066;
+}
+.postt {
+  width: 373px;
+  min-height: 142px;
+  margin: auto;
+  margin-top: 10px;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 20px 60px;
+  box-shadow: 0 0 1em #80808066;
+}
+.post {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 24px;
+}
+/* Post title */
+.post-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+/* Post content */
+.post-content {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+/* Like button */
+.like-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.like-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+/* Delete button */
+.delete-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+  margin-right: 8px;
+}
+.delete-button:hover {
+  background-color: #F44336;
+  color: #fff;
+}
+/* Update button */
+.update-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.update-button:hover {
+  background-color: #4CAF50;
+  color: #fff;
+}
+/* Comment input */
+.comment-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  width: 69%;
+  margin-top: 16px;
+  margin-right: 11px;
+}
+/* Comment button */
+.comment-button {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+  margin-top: 8px;
+}
+.comment-button:hover {
+  background-color: #333;
+}
+.comment-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+/* Comment author */
+.comment-author {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+/* Comment content */
+.comment-content {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: -32px;
+}
+/* Comment timestamp */
+.comment-timestamp {
+  color: #666;
+  font-size: 10px;
+  font-weight: bold;
+ 
+}
+/* Reply button */
+.reply-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+  margin-top: 8px;
+}
+.reply-button:hover {
+  background-color: #4CAF50;
+  color: #fff;
+}

@@ -7,20 +7,17 @@ import Posts from './components/posts.js'
 
 const App = () => {
 
-const [data , setData] = useState([])
 
 
+  const [data , setData] = useState([])
 
 
 useEffect(() => {
-  getPosts()
-} , [])
-
-const getPosts = () => {
   axios.get("http://127.0.0.1:3000/api/posts/getAllPosts")
   .then(response => {setData(response.data)})
   .catch(error => {console.log(error)})
-}
+} , [])
+
 
 
   return (
@@ -29,7 +26,7 @@ const getPosts = () => {
     
        <nav className="nav">
           <h1 className="logo" >
-            Blog <span>App</span>
+          blogging<span> APP </span>
           </h1>
           
        
@@ -49,13 +46,13 @@ const getPosts = () => {
           </ul>
         </nav>
         
+        </div>
         <Routes>
           <Route path='/hsm' element ={<Form/>}/>
           <Route path='/' element ={<Posts data = {data}/>}/>
          
           
         </Routes>
-        </div>
     
     </BrowserRouter>
 
