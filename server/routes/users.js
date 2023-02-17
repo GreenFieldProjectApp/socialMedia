@@ -11,7 +11,7 @@ router.get('/getAllUsers', getAllUsers);
 // GET request for one user.
 router.get('/:iduser', getOneUser);
 // POST request for creating a user.
-router.post('/add', addUser);
+// router.post('/add', addUser);
 router.put('/updateUser/:id', updateOneUser);
 router.delete('/deleteUser/:id',deleteOneUser)
 
