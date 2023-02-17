@@ -2,18 +2,18 @@ const express = require('express');
 const router = express.Router();
 
 // Require controller modules.
-const { getAllUsers, addUser, getOneUser,updateOneUser ,deleteOneUser} = require('../controllers/users');
+const { logIn,signUp,signOut} = require('../controllers/auth');
 
 /// USERS ROUTES ///
 
 //GET request to fetch all users. NOTE This must come before route for id.
-router.get('/getAllUsers', getAllUsers);
+router.post('/signout', signOut);
 // GET request for one user.
-router.get('/:iduser', getOneUser);
+
 // POST request for creating a user.
 // router.post('/add', addUser);
-router.put('/updateUser/:id', updateOneUser);
-router.delete('/deleteUser/:id',deleteOneUser)
+router.post('/signin', logIn);
+router.post('/signup',signUp)
 
 
 module.exports = router;

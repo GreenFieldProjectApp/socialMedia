@@ -35,7 +35,7 @@ const getPosts = () => {
        
           <ul className="list">
             <li >
-              <a href="/Home">Home</a>
+              <a href="/">Home</a>
             </li>
             <li >
               <a href="/seif">Profile</a>
@@ -51,7 +51,7 @@ const getPosts = () => {
         
         <Routes>
           <Route path='/hsm' element ={<Form/>}/>
-          <Route path='/home' element ={<Posts data = {data}/>}/>
+          <Route path='/' element ={<Posts data = {data}/>}/>
          
           
         </Routes>
