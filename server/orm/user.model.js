@@ -1,7 +1,5 @@
 // Define and export the sequelize model that represents the table users.
 
-const { Sequelize } = require(".");
-
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("user", {
         fullName: {
@@ -17,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
      picture: {
       type: DataTypes.STRING,
       allowNull: true,
+      
     
     }, 
      phoneNumber: {

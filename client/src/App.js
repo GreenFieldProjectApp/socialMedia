@@ -26,7 +26,7 @@ useEffect(() => {
     
        <nav className="nav">
           <h1 className="logo" >
-            Blog <span>App</span>
+          blogging<span> APP </span>
           </h1>
           
        

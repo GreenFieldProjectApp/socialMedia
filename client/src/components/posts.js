@@ -1,44 +1,110 @@
 import React , {useState}from 'react'
 import axios from 'axios'
+import UpdateComments from './updateComments'
+import UpdatePost from './UpdatePost'
 
 const Posts = ({data}) => {
+  console.log(data);
+
+  const [updateCommentsform,setUpdateCommentsform]=useState(false);
+  const updateCommentform=()=>{
+   setUpdateCommentsform(!updateCommentsform)
+   
+  }
+
+  const [updatePostform,setUpdatePostform]=useState(false);
+  const updatepostsform=()=>{
+    setUpdatePostform(!updatePostform)
+   
+  }
+
+
+
+
+  
 
   const [content , setContent] = useState("")
-  
   const addcomment = () => {
     axios.post("http://localhost:3000/api/comments/add" , {content:content})
+    ;window.location.reload()
     .then(result => console.log(result))
     .catch(error => console.log(error));
   }
-  
-  if(data[0])
-  console.log("props",data[0].comments[0].content);
+
+
   return (
     <div >
       {data.map((item , index) => (
         <div className="post" key = {index}>
+       
 
-      {item.createdAt} <br/>
-       {item.title} <br/>
-       {item.content} <br/>
-       likes : {item.likes} <br/>
-     
+       
+
+
+       <p className='comment-timestamp'>{item.createdAt}</p> <br/>
+       <h3 className="post-tilte">{item.title}</h3> <br/>
+       <p className='post-content'>{item.content}</p> <br/>
+       <button className='like-button'> {item.likes}</button> <br/>
+
+       <button className='delete-button' onClick={() =>
+       axios.delete(`http://localhost:3000/api/posts/deleteOnePost/${item.id}`)
+       (window.location.reload())
+       .then(function (result){console.log("result",result)}) 
+       .catch(function(error){console.log(error);})
+      }>delete post</button> 
+
+        <input 
+        className='update-button'
+        type="submit"
+        value="update"
+        onClick={()=>updatepostsform()  
+        }
+        /> 
+{updatePostform && (< UpdatePost id={item.id} content={item.content}/>)} <br/>
+
+
+
+
+
+       <input  className='comment-input' placeholder='add comment' onChange={(e) => {setContent(e.target.value)} }/>
+       <button className='comment-button' onClick={() => {addcomment()}}>Add comment</button> <br/> 
        <div>
-  {item.comments.map((el , index) => (
+      
+  { 
+item.comments &&
+  item.comments.map((el , index) => (
     
-            <div className="postt" key = {index}>
-              <input placeholder='add comment' className='input-field' onChange={(e) => {setContent(e.target.value)} }/>
-       <button onClick={() => {addcomment()}}>Add comment</button> <br/> 
-              {console.log(el)}
-              {el.user.fullName}
-              {el.createdAt}<br/>
-              comments : {el.content}<br/>
-              likes:{el.likes}
+            <div className="comment-container" key = {index}>
+              
+              {console.log("elem",el.id)}
+              <h3 className='comment-author'>{el.user.fullName}</h3>
+              <p className='comment-timestamp'>{el.createdAt}</p><br/>
+              <p className='comment-content'>{el.content}</p> <br/>
+              <button className='like-button'> {el.likes}</button>
+            
+    
+              <button className='reply-button' onClick={()=>axios.delete(`http://localhost:3000/api/comments/deleteComment/${el.id}`)
+                (window.location.reload())
+               .then(function (result){console.log("result",result)}) 
+               .catch(function(error){console.log(error)
+                })
+            }>delete that comment</button> <br/>
+
+            <input
+        className='update-button'
+        type="submit"
+        value="update"
+        onClick={()=>updateCommentform()  
+        }
+        />
+              {updateCommentsform && (< UpdateComments id={el.id } content={el.content}/>)}
+
 
         </div>
         ))}
-        </div>
-
+        
+      </div>
+      
       </div>    
       ))}
      
