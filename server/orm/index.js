@@ -6,6 +6,9 @@ const { Sequelize, DataTypes } = require("sequelize");
 
 
 const sequelize = new Sequelize("blogs","root","0.Azerty123",
+
+
+
   {
     HOST: "localhost",
     dialect: "mysql",
