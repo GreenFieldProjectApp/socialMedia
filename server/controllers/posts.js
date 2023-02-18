@@ -83,6 +83,7 @@ module.exports = {
     }
   },
   deleteOnePost: async (req, res) => {
+    console.log(rq.params);
     try {
       const post = await Post.destroy({
         where : {id : req.params.id},
