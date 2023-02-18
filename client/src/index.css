@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Blaka+Hollow&family=Itim&family=Lilita+One&family=Nunito+Sans:wght@200&family=Roboto+Slab:wght@100&family=Sofia+Sans+Extra+Condensed&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,12 +6,68 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
-  background-color: #00000025;
+  /* background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("img/back.jpg"); */
+  height:100vh;
+  background-size: cover;
+  background-position: center center;
+  position:relative;
+
+}
+
+.slogan {
+  position: absolute;
+  /* margin:20% 30%; */
+  text-align: center;
+  margin-left: 40%;
+  margin-bottom: 60%;
+  margin-top: 9%;
+
+}
+
+.slogan h1 {
+  text-align: center;
+  color: #0a0202;
+  text-transform: uppercase;
+  font-size: 100px;
+  font-family: 'Lilita One', cursive;
   
 
+}
+
+.slogan span{
+  text-align: center;
+  color: #600606;
+  text-transform: uppercase;
+  font-size: 100px;
+  font-family: 'Lilita One', cursive;
   
 }
+
+
+
+a.button1 {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #350303;
+  margin:0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto' , sans-serif;
+  font-weight: 500;
+  color: #430606;
+  text-align: center;
+  transition: all 0.2s;
+  font-size: 40px;
+}
+a.button1:hover {
+  color: #e9c85d;
+  background-color: #430606;
+}
+
+
+
+
 
 * {
   margin: 0;
@@ -55,8 +112,8 @@ code {
 }
 
 span{
-  color: #4CAF50;
-  font-size: 35px;
+  color: brown;
+  font-size: 25px;
 }
 
 .card {
@@ -85,171 +142,162 @@ span{
 
 .input-field{
   border-bottom: 2px solid rgba(#999, 0.25);
-  font-size: 10px;
-  padding: 2px;
+  font-size: 18px;
+  padding: 7px;
   border-radius: 3px;
 
 }
 
-.post {
-  width: 590px;
-  min-height: 250px;
-  margin: auto;
-  margin-top: 10px;
-  border: 1px solid #77777769;
-  background-color: #fdfdfd;
-  border-radius: 4px;
-  padding: 20px 60px;
-  box-shadow: 0 0 1em #80808066;
-}
-.postt {
-  width: 373px;
-  min-height: 142px;
-  margin: auto;
-  margin-top: 10px;
-  border: 1px solid #77777769;
-  background-color: #fdfdfd;
-  border-radius: 4px;
-  padding: 20px 60px;
-  box-shadow: 0 0 1em #80808066;
-}
-.post {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  margin-bottom: 24px;
-}
-/* Post title */
-.post-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 16px;
-}
-/* Post content */
-.post-content {
-  font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 16px;
-}
-/* Like button */
-.like-button {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  color: #333;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 8px 16px;
-  text-align: center;
-  transition: all 0.2s ease;
-  user-select: none;
-}
-.like-button:hover {
-  background-color: #333;
+.form {
+  height: 18.75em;
+  width: 25em;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-transform: uppercase;
+  font-family: "Bebas Neue", Arial;
   color: #fff;
 }
-/* Delete button */
-.delete-button {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  color: #333;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 8px 16px;
-  text-align: center;
-  transition: all 0.2s ease;
-  user-select: none;
-  margin-right: 8px;
+
+.form > div {
+  height: 6.25em;
+  width: 100%;
 }
-.delete-button:hover {
-  background-color: #F44336;
+
+.username {
+  background-color: #4daf7c;
+}
+
+.username::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-style: solid;
+  border-width: 0.5em 0.469em 0 0.469em;
+  border-color: #4daf7c transparent transparent transparent;
+  top: 6.25em;
+  left: 50%;
+  margin-left: -0.496em;
+}
+
+.password {
+  background-color: #404241;
+}
+
+.password::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-style: solid;
+  border-width: 0.5em 0.469em 0 0.469em;
+  border-color: #404241 transparent transparent transparent;
+  top: 12.5em;
+  left: 50%;
+  margin-left: -0.496em;
+}
+
+.login {
+  background-color: #e9c85d;
+  display: table;
+}
+
+.login span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size:3em;
+  cursor: pointer;
+}
+
+input {
+  height: 1.25em;
+  width: 8.125em;
+  font-size: 2em;
+  text-align:center;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  background: transparent;
+  border:0.033em #fff solid;
+  margin-left: 2.1875em;
+  margin-top: 1em;
+  font-family: "Bebas Neue", Arial;
+}
+
+::placeholder {
   color: #fff;
 }
-/* Update button */
-.update-button {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  color: #333;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 8px 16px;
-  text-align: center;
-  transition: all 0.2s ease;
-  user-select: none;
-}
-.update-button:hover {
-  background-color: #4CAF50;
+
+::-moz-placeholder {
   color: #fff;
 }
-/* Comment input */
-.comment-input {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  padding: 10px;
-  width: 69%;
-  margin-top: 16px;
-  margin-right: 11px;
-}
-/* Comment button */
-.comment-button {
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 8px 16px;
-  text-align: center;
-  transition: all 0.2s ease;
-  user-select: none;
-  margin-top: 8px;
-}
-.comment-button:hover {
-  background-color: #333;
-}
-.comment-container {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-bottom: 16px;
-  padding: 16px;
-}
-/* Comment author */
-.comment-author {
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-/* Comment content */
-.comment-content {
-  font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: -32px;
-}
-/* Comment timestamp */
-.comment-timestamp {
-  color: #666;
-  font-size: 10px;
-  font-weight: bold;
- 
-}
-/* Reply button */
-.reply-button {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  color: #333;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 8px 16px;
-  text-align: center;
-  transition: all 0.2s ease;
-  user-select: none;
-  margin-top: 8px;
-}
-.reply-button:hover {
-  background-color: #4CAF50;
+
+:-ms-input-placeholder {
   color: #fff;
 }
+
+::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.wrapper {
+  width:1170px;
+  margin:auto;
+}
+
+
+:root {
+	--background: rgb(134, 0, 13);
+	--primary: #a31127f8;
+	--secondary: #820909;
+	--third: #8e0404;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content:flex-start;
+}
+
+.shape {
+ 	background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+  animation: morph 8s ease-in-out infinite;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  height: 400px;
+  transition: all 1s ease-in-out;
+  width: 400px;
+  z-index: 5;
+  margin-bottom: 10%;
+}
+
+@keyframes morph {
+  0% {
+			border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+			background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+	} 
+	
+	50% {
+			border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;
+			background: linear-gradient(45deg, var(--third) 0%, var(--secondary) 100%);
+	}
+  
+	100% {
+		border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+		background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+	} 
+}
+
+
+
+
+
