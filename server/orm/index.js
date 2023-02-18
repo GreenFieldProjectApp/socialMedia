@@ -5,9 +5,13 @@ const { Sequelize, DataTypes } = require("sequelize");
 //You should modify 'database', 'username' and 'password' to fit your own credentials.
 
 
+<<<<<<< HEAD
 const sequelize = new Sequelize("blogs","root","0.Azerty123",
 
 
+=======
+const sequelize = new Sequelize("blogs","root","Mahdi123321",
+>>>>>>> 11b2457c994fb9724a3ca588f03381e991e2295f
 
   {
     HOST: "localhost",
