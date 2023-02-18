@@ -41,7 +41,7 @@ module.exports = {
   deleteComment: async (req, res) => {
     try {
       const comment = await Comment.destroy({
-        where: {id: req.params.id}
+        where: {commentId: req.params.id}
       });
       res.status(201).json(comment);
     } catch (error) {
