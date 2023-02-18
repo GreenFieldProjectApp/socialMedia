@@ -9,18 +9,22 @@ module.exports = {
       const posts = await Post.findAll({
      
         order: [["createdAt", "ASC"]],
-        attributes: { exclude: ['userId'] },
+        // attributes: { exclude: ['userId'] },
         include: [
+          { model: User, as: "user", attributes: ["fullName"] },
           {
             model: Comment,
         //     separate: true, whyyyyy whyy ????????
             order: [["date", "ASC"]],
-            attributes: { exclude: ['postId', 'userId'] },
+            // attributes: { exclude: ['postId', 'userId'] },
             include: [
               { model: User, as: "user", attributes: ["fullName"] },
             ],
           },
-        //   //{ model: User, as: "user", attributes: [["fullName", "author"]] }
+          
+          // { model: User, as: "user", attributes: [["fullName", "author"]] }
+                  
+
         ]
       })
       res.status(200).json(posts);
@@ -34,7 +38,7 @@ module.exports = {
       const posts = await Post.findAll({
         where : {userId : req.params.id},
         order: [["createdAt", "ASC"]],
-        attributes: { exclude: ['userId'] },
+        
         include: [
         //   { model: User,
         // include: [
@@ -47,7 +51,7 @@ module.exports = {
             model: Comment,
             separate: true,
             order: [["createdAt", "ASC"]],
-            attributes: { exclude: ['postId', 'userId'] },
+            // attributes: { exclude: ['postId', 'userId'] },
             include: [
               { model: User, as: "user", attributes: ["fullName"] },
             ],
