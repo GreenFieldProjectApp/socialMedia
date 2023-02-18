@@ -23,14 +23,22 @@ module.exports = {
           }else {
         //verify the user 
         console.log(process.env.JWT_SECRET)
+        const exp = Date.now() + 1000 * 60 * 60 * 24 * 30;
          const jwtToken = jwt.sign(
     
-        { id: userWithEmail.id, email: userWithEmail.email },
+          {user:userWithEmail},
         process.env.JWT_SECRET
       );
       console.log("jwt",jwt)
+      const options= {
+        expires: new Date(exp),
+      // httpOnly make only the browser & our server can read the cookie
+        httpOnly: true,
+        sameSite: "lax"
+      }
+       res.cookie("Authorization", jwtToken, options);
     //welcome 
-      res.send({ message: "Welcome Back!", token: jwtToken });}}
+      res.send({ message: "Welcome Back!", token: jwtToken,userWithEmail });}}
          }
          catch(error){
             console.log (error)
@@ -65,9 +73,18 @@ module.exports = {
   //method to add a post to the database via the respective model function.
   signOut: async (req, res) => {
     try {
+      res.clearCookie("Authorization")
         res.status(200).json(" to the next login !");
           }catch (err) {
           return res.sendStatus(400);
         }
   },
+  checkAuthUser( req,res){
+    console.log("jddidididid",req.findUser)
+    try{
+      res.status(200).send(req.findUser);
+    } catch (err){
+      return res.sendStatus(400);
+    }
+  }
 }
