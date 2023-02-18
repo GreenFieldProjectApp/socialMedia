@@ -26,7 +26,7 @@ module.exports = {
         const exp = Date.now() + 1000 * 60 * 60 * 24 * 30;
          const jwtToken = jwt.sign(
     
-        { sud : userWithEmail._id,exp },
+          {user:userWithEmail},
         process.env.JWT_SECRET
       );
       console.log("jwt",jwt)
@@ -79,9 +79,10 @@ module.exports = {
           return res.sendStatus(400);
         }
   },
-  checkAuth( req,res){
+  checkAuthUser( req,res){
+    console.log("jddidididid",req.findUser)
     try{
-      res.sendStatus(200);
+      res.status(200).send(req.findUser);
     } catch (err){
       return res.sendStatus(400);
     }
