@@ -1,17 +1,15 @@
 import React from 'react'
+import PostDetails from './PostDetails';
 
 const Posts = (props) => {
-  console.log("props",props);
   return (
     <div >
-      {props.data.map((item , index) => (
-        <div className="post" key = {index}>
-            
-       {item.title} <br/>
-       {item.content} 
       
-       
-      </div>    
+      {props.data && props.data.map((item , index) => (
+        <div className="post" key = {index}>
+             
+       <PostDetails data={item} users={props.users}/>
+ </div>    
       ))}
     </div>
   )
