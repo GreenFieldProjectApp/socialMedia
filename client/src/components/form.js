@@ -24,7 +24,7 @@ const Form = (props) => {
         userId:1,
         likes:0,
       })
-      //window.location.reload()
+      window.location.reload()
       .then(function (response) {
         console.log(response);
       })
@@ -51,13 +51,13 @@ const Form = (props) => {
       alert("Image uploaded!");
     }
   return(
-  <div className="createBlog">
-    <div>
+  <div >
+      <div>
       <div className='input'>
-      <textarea placeholder="Title"  onChange={(e) => {setTitle(e.target.value)} }/>
+      <textarea placeholder="Title" className='input-field' onChange={(e) => {setTitle(e.target.value)} }/>
        </div>
        <div className='input'>
-       <textarea placeholder="Content ..."  onChange={(e) => {setContent(e.target.value)} }/>
+       <textarea placeholder="Content ..." className='input-field' onChange={(e) => {setContent(e.target.value)} }/>
        </div>
        <div className='input'>
        <textarea placeholder='User ID'  onChange={(e) => {setUserId(e.target.value)} }/>
