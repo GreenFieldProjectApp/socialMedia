@@ -1,6 +1,10 @@
 {
     "host": "localhost",
     "user": "root",
-    "password": "Mahdi123321",
+<<<<<<< HEAD
+    "password": "akram",
+=======
+    "password": "s07249446667",
+>>>>>>> e66c1c41de3139bc7e9234f1ab026c6dafc8d7ea
     "database": "blogs"
 } 

@@ -1,9 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Blaka+Hollow&family=Itim&family=Lilita+One&family=Nunito+Sans:wght@200&family=Roboto+Slab:wght@100&family=Sofia+Sans+Extra+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
+
+button,input{
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+    
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("img/back.jpg"); */
@@ -82,8 +89,7 @@ a.button1:hover {
 
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav {
@@ -112,8 +118,9 @@ code {
 }
 
 span{
-  color: brown;
+  color: rgb(255, 252, 252);
   font-size: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .card {
@@ -141,7 +148,7 @@ span{
 }
 
 .input-field{
-  border-bottom: 2px solid rgba(#999, 0.25);
+  border-bottom: 2px solid rgba(#0c0101, 0.25);
   font-size: 18px;
   padding: 7px;
   border-radius: 3px;
@@ -151,23 +158,24 @@ span{
 .form {
   height: 18.75em;
   width: 25em;
-  background: #fff;
+  background: #b0acac;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 90rem;
   transform: translate(-50%,-50%);
   text-transform: uppercase;
   font-family: "Bebas Neue", Arial;
   color: #fff;
+  opacity: 70%;
 }
 
-.form > div {
-  height: 6.25em;
+.form div {
+  height: 6.2rem;
   width: 100%;
 }
 
 .username {
-  background-color: #4daf7c;
+  background-color: #073755;
 }
 
 .username::after {
@@ -177,14 +185,18 @@ span{
   position: absolute;
   border-style: solid;
   border-width: 0.5em 0.469em 0 0.469em;
-  border-color: #4daf7c transparent transparent transparent;
+  border-color: #707d76 transparent transparent transparent;
   top: 6.25em;
   left: 50%;
   margin-left: -0.496em;
+  border-radius: 40%;
 }
 
 .password {
-  background-color: #404241;
+  background-color:  #073755;
+}
+body{
+  background-image: url("https://c0.wallpaperflare.com/path/663/817/172/equipment-illustration-letter-message-cc65c03ea3420c540a2e5a994515f876.jpg");
 }
 
 .password::after {
@@ -201,8 +213,10 @@ span{
 }
 
 .login {
-  background-color: #e9c85d;
+  background-color:  #073755;
   display: table;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
 }
 
 .login span {
@@ -221,8 +235,9 @@ input {
   border: 0;
   outline: 0;
   color: #fff;
+  border-radius: 10%;
   background: transparent;
-  border:0.033em #fff solid;
+  border:0.07em #fff solid;
   margin-left: 2.1875em;
   margin-top: 1em;
   font-family: "Bebas Neue", Arial;
@@ -297,7 +312,139 @@ input {
 	} 
 }
 
+.feedBox {
+  display: left, inline-flex;
+  width: 30%;
+}
+
+.profileBox{
+  display: right, inline-block;
+  width: 40%;
+}
+
+.createBlog{
+  display:inline-flexbox;
+  width: 50%;
+  margin-left: 400px;
+}
+
+.postsFeed{
+  width:60%;
+  margin-left: 300px;
+  display: flexbox;
+}
+
+.post {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 24px;
+  width: 50%;
+  margin-left: 3%;
+}
+/* Post title */
+.post-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+/* Post content */
+.post-content {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+/* Like button */
+.like-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.like-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+/* Delete button */
+.delete-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+  margin-right: 8px;
+}
+.delete-button:hover {
+  background-color: #F44336;
+  color: #fff;
+}
+/* Update button */
+.update-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px -1px;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.update-button:hover {
+  background-color: #4CAF50;
+  color: #fff;
+}
+/* Comment input */
+.comment-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 8px;
+  width: 80%;
+  margin-top: 16px;
+}
+/* Comment button */
+.comment-button {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+  margin-top: 8px;
+}
+.comment-button:hover {
+  background-color: #333;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  background-color: white;
+
+}
+.post-container{
+width: 80rem;
+height: 100%;
 
 
-
-
+}

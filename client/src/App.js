@@ -42,12 +42,9 @@ const getUsers = () => {
   return (
 
   <BrowserRouter>
+  
   <div className="App">
-    
-       
-        
         <Routes>
-          
           <Route path="/home"
            element={<Home
            data={data} 
@@ -60,14 +57,10 @@ const getUsers = () => {
           <Route path="/" element={<FirstLook/>}/>
           <Route path="/register" element={<Register  />}/>
           <Route path="/login" element = {<Login users={users} logger={setLogger} view={setView}/>}/>
-         
-          
-          
         </Routes>
         </div>
-    
     </BrowserRouter>
-
+    
     );
 }
 
