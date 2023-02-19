@@ -25,16 +25,27 @@ const User = () => {
   return (
 <div className="form">
   <div className="username">
+<<<<<<< HEAD
     <input type="text" placeholder="User Name" onChange={(e) => {setFullName(e.target.value)}}/>
   </div>
   <div className="username">
     <input type="text" placeholder="Email" onChange={(e) => {setEmail(e.target.value)}}/>
+=======
+    <input type="text" placeholder="Full Name" onChange={(e) => {setFullName(e.target.value)}}/>
+  </div>
+  <div className="username">
+    <input type="email" placeholder="E-mail" onChange={(e) => {setEmail(e.target.value)}}/>
+>>>>>>> b3346d5a6f0dffa2a6c87a95458b10ae79f18b2e
   </div>
   <div className="username">
     <input type="text" placeholder="Phone Number" onChange={(e) => {setPhoneNumber(e.target.value)}}/>
   </div>
   <div className="password">
+<<<<<<< HEAD
     <input type="text" placeholder="Password" onChange={(e) => {setPassword(e.target.value)}}/>
+=======
+    <input type="password" placeholder="Password" onChange={(e) => {setPassword(e.target.value)}}/>
+>>>>>>> b3346d5a6f0dffa2a6c87a95458b10ae79f18b2e
   </div>
   <div className="login">
     <Link to="/login" onClick={() => {User()}}><span>Register</span></Link>

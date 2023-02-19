@@ -42,6 +42,7 @@ const getUsers = () => {
   return (
 
   <BrowserRouter>
+  
   <div className="App">
         <Routes>
           <Route path="/home"
@@ -59,7 +60,7 @@ const getUsers = () => {
         </Routes>
         </div>
     </BrowserRouter>
-
+    
     );
 }
 

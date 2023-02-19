@@ -5,7 +5,12 @@ const { Sequelize, DataTypes } = require("sequelize");
 //You should modify 'database', 'username' and 'password' to fit your own credentials.
 
 
+<<<<<<< HEAD
 const sequelize = new Sequelize("blogs","root","akram",
+=======
+const sequelize = new Sequelize("blogs","root","0.Azerty123",
+
+>>>>>>> b3346d5a6f0dffa2a6c87a95458b10ae79f18b2e
   {
     HOST: "localhost",
     dialect: "mysql",
@@ -66,12 +71,8 @@ db.Comment.belongsTo(db.Post, {
 // });
 db.sequelize.sync()
 db.User.sync()
-console.log("The table for the Users model was just (re)created!")
 db.Post.sync()
-console.log("The table for the Posts model was just (re)created!")
 db.Comment.sync()
-console.log("The table for the Comments model was just (re)created!")
-
 db.sequelize
   .authenticate()
   .then(() => console.log("Connected"))

@@ -14,7 +14,9 @@ async  function verifyAuth(req,res,next){
         // if (Date.now() > decoded.exp) return res.status(401).send('dkvklzd,c');
     //finding the user using decoded sub
 
+
     if(!findUser) return res.status(401).send('user not found')
+
     // attach user to req
    else {
   
@@ -30,5 +32,6 @@ next()
     return res.sendStatus(401)
 }
 }
+
 module.exports = verifyAuth ; 
-console.log("njsdjnscsdcj   asdbajzd")
+
