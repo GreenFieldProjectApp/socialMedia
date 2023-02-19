@@ -47,8 +47,8 @@ if(view === 'create') {
           </ul>
          
         </nav>
-    
-      {renderView()}
+    <div className='mainFeed'>{renderView()}</div>
+      
     </div>
     
   )
