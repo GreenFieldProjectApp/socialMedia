@@ -14,6 +14,7 @@ const PostDetails = (props) => {
             likes:{props.data.likes}
            <p>{props.data.createdAt}</p>
            </div>
+           
            <div>
            {props.data.comments && props.data.comments.map((e , index) => (
             <div key={index}>
