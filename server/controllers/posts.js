@@ -87,10 +87,10 @@ module.exports = {
     }
   },
   deleteOnePost: async (req, res) => {
-    console.log(rq.params);
+    console.log(req.params);
     try {
       const post = await Post.destroy({
-        where : {id : req.params.id},
+        where :{id : req.params.id},
       });
       res.status(201).json(post);
     } catch (error) {
