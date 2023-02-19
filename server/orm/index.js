@@ -4,19 +4,9 @@ const { Sequelize, DataTypes } = require("sequelize");
 //Create a Sequelize instance and pass the appropriate parameters separately
 //You should modify 'database', 'username' and 'password' to fit your own credentials.
 
-<<<<<<< HEAD
-const sequelize = new Sequelize("blogs","root","alaa25062001",
-=======
 
-<<<<<<< HEAD
 const sequelize = new Sequelize("blogs","root","0.Azerty123",
 
-
-=======
-const sequelize = new Sequelize("blogs","root","Mahdi123321",
->>>>>>> 11b2457c994fb9724a3ca588f03381e991e2295f
-
->>>>>>> 11b2457c994fb9724a3ca588f03381e991e2295f
   {
     HOST: "localhost",
     dialect: "mysql",
