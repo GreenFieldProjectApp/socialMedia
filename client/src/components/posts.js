@@ -3,7 +3,7 @@ import PostDetails from './PostDetails';
 
 const Posts = (props) => {
   return (
-    <div >
+    <div className='postsFeed'>
       
       {props.data && props.data.map((item , index) => (
         <div className="post" key = {index}>

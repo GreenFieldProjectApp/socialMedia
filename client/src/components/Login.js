@@ -4,15 +4,20 @@ import { Link } from 'react-router-dom'
 
 const Login = (props) => {
 
-  
+  console.log("props after logIN:", props);
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-//   const [loggerId , setLoggerId] = useState("")
+  const [loggerId , setLoggerId] = useState("")
+  //const [logger, setLogger] = useState({})
+
+  // const getTheIdOfTheUser=()=>{
+  //   setLogger()
+  // }
    
 
 
-// const getOneUser = (ID) => {
-//   axios.get(`http://127.0.0.1:3000/api/users/${ID}`)
+// const getOneUser = () => {
+//   axios.get(`http://127.0.0.1:3000/api/users/${id}`)
 //   .then((result) => {
 //     console.log(result);
 //     setLogger(result)

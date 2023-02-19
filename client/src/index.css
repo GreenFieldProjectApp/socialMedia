@@ -148,7 +148,7 @@ span{
 }
 
 .input-field{
-  border-bottom: 2px solid rgba(#999, 0.25);
+  border-bottom: 2px solid rgba(#0c0101, 0.25);
   font-size: 18px;
   padding: 7px;
   border-radius: 3px;
@@ -312,6 +312,27 @@ input {
 	} 
 }
 
+.feedBox {
+  display: left, inline-flex;
+  width: 30%;
+}
+
+.profileBox{
+  display: right, inline-block;
+  width: 40%;
+}
+
+.createBlog{
+  display:inline-flexbox;
+  width: 50%;
+  margin-left: 400px;
+}
+
+.postsFeed{
+  width:60%;
+  margin-left: 300px;
+  display: flexbox;
+}
 
 .post {
   background-color: #fff;

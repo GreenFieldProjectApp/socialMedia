@@ -3,6 +3,7 @@ import Comments from './comments'
 import UpdatePosts from './UpdatePosts'
 import axios from 'axios'
 
+
 const PostDetails = (props) => {
      
      const [updatePost,setUpdatePost]=useState(false);

@@ -25,10 +25,10 @@ const User = () => {
   return (
 <div className="form">
   <div className="username">
-    <input type="text" placeholder="Full Name" onChange={(e) => {setFullName(e.target.value)}}/>
+    <input type="text" placeholder="User Name" onChange={(e) => {setFullName(e.target.value)}}/>
   </div>
   <div className="username">
-    <input type="email" placeholder="E-mail" onChange={(e) => {setEmail(e.target.value)}}/>
+    <input type="text" placeholder="Email" onChange={(e) => {setEmail(e.target.value)}}/>
   </div>
   <div className="username">
     <input type="text" placeholder="Phone Number" onChange={(e) => {setPhoneNumber(e.target.value)}}/>

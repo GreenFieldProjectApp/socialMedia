@@ -1,12 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-const Form = () => {
+
+const Form = (props) => {
+  console.log("props: ",props);
   const[title,setTitle]= useState("");
   const[content,setContent]= useState("");
   const[userId,setUserId]=useState(0);
   const[ imageUrl, setImageUrl] = useState("");
   const[likes,setLikes]=useState(0);
+
+  //const[phoneNumber,setPhoneNumber]= useState();
+  //const[password,setPassword]= useState();
+  //const[image, setImage] =useState("");
   const cloud_name = "dwkdymju4";
   const upload_preset ="blog test image 00";
     const addBlog=()=>{
@@ -15,7 +21,7 @@ const Form = () => {
         title: title,
         content: content,
         image: imageUrl,
-        userId:2,
+        userId:1,
         likes:0,
       })
       window.location.reload()
@@ -25,6 +31,7 @@ const Form = () => {
       .catch(function (error) {
         console.log(error);
       });
+      alert("Post Created!");
     }
     const handleClick=async()=>{
       const {files} =document.querySelector(".app_uploadInput");
@@ -41,6 +48,7 @@ const Form = () => {
       .then((res)=> res.json())
       .then((res)=> setImageUrl(res.secure_url))
       .catch((err)=>console.log(err))
+      alert("Image uploaded!");
     }
   return(
   <div >
@@ -52,7 +60,7 @@ const Form = () => {
        <textarea placeholder="Content ..." className='input-field' onChange={(e) => {setContent(e.target.value)} }/>
        </div>
        <div className='input'>
-       <textarea placeholder='User ID' className='input-field' onChange={(e) => {setUserId(e.target.value)} }/>
+       <textarea placeholder='User ID'  onChange={(e) => {setUserId(e.target.value)} }/>
        </div>
     <div className="app">
       <input type="file" /*lang="eng"*/ className="app_uploadInput"/>
