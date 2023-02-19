@@ -313,6 +313,117 @@ input {
 }
 
 
+.post {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 24px;
+  width: 50%;
+  margin-left: 3%;
+}
+/* Post title */
+.post-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+/* Post content */
+.post-content {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+/* Like button */
+.like-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.like-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+/* Delete button */
+.delete-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+  margin-right: 8px;
+}
+.delete-button:hover {
+  background-color: #F44336;
+  color: #fff;
+}
+/* Update button */
+.update-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px -1px;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.update-button:hover {
+  background-color: #4CAF50;
+  color: #fff;
+}
+/* Comment input */
+.comment-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 8px;
+  width: 80%;
+  margin-top: 16px;
+}
+/* Comment button */
+.comment-button {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+  margin-top: 8px;
+}
+.comment-button:hover {
+  background-color: #333;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  background-color: white;
+
+}
+.post-container{
+width: 80rem;
+height: 100%;
 
 
-
+}

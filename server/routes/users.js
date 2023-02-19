@@ -9,7 +9,7 @@ const { getAllUsers, addUser, getOneUser,updateOneUser ,deleteOneUser} = require
 //GET request to fetch all users. NOTE This must come before route for id.
 router.get('/getAllUsers', getAllUsers);
 // GET request for one user.
-router.get('/:iduser', getOneUser);
+router.get('/:id', getOneUser);
 // POST request for creating a user.
 // router.post('/add', addUser);
 router.put('/updateUser/:id', updateOneUser);
