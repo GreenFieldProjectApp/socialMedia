@@ -1,9 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Blaka+Hollow&family=Itim&family=Lilita+One&family=Nunito+Sans:wght@200&family=Roboto+Slab:wght@100&family=Sofia+Sans+Extra+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
+
+button,input{
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+    
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("img/back.jpg"); */
@@ -82,8 +89,7 @@ a.button1:hover {
 
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav {
@@ -112,8 +118,9 @@ code {
 }
 
 span{
-  color: brown;
+  color: rgb(255, 252, 252);
   font-size: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .card {
@@ -151,23 +158,24 @@ span{
 .form {
   height: 18.75em;
   width: 25em;
-  background: #fff;
+  background: #b0acac;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 90rem;
   transform: translate(-50%,-50%);
   text-transform: uppercase;
   font-family: "Bebas Neue", Arial;
   color: #fff;
+  opacity: 70%;
 }
 
-.form > div {
-  height: 6.25em;
+.form div {
+  height: 6.2rem;
   width: 100%;
 }
 
 .username {
-  background-color: #4daf7c;
+  background-color: #073755;
 }
 
 .username::after {
@@ -177,14 +185,18 @@ span{
   position: absolute;
   border-style: solid;
   border-width: 0.5em 0.469em 0 0.469em;
-  border-color: #4daf7c transparent transparent transparent;
+  border-color: #707d76 transparent transparent transparent;
   top: 6.25em;
   left: 50%;
   margin-left: -0.496em;
+  border-radius: 40%;
 }
 
 .password {
-  background-color: #404241;
+  background-color:  #073755;
+}
+body{
+  background-image: url("https://c0.wallpaperflare.com/path/663/817/172/equipment-illustration-letter-message-cc65c03ea3420c540a2e5a994515f876.jpg");
 }
 
 .password::after {
@@ -201,8 +213,10 @@ span{
 }
 
 .login {
-  background-color: #e9c85d;
+  background-color:  #073755;
   display: table;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
 }
 
 .login span {
@@ -221,8 +235,9 @@ input {
   border: 0;
   outline: 0;
   color: #fff;
+  border-radius: 10%;
   background: transparent;
-  border:0.033em #fff solid;
+  border:0.07em #fff solid;
   margin-left: 2.1875em;
   margin-top: 1em;
   font-family: "Bebas Neue", Arial;

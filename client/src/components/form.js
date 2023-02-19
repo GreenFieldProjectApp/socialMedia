@@ -1,8 +1,6 @@
-
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-
 const Form = () => {
   const[title,setTitle]= useState("");
   const[content,setContent]= useState("");
@@ -13,11 +11,9 @@ const Form = () => {
   const[likes,setLikes]=useState(0);
   //const[phoneNumber,setPhoneNumber]= useState();
   //const[password,setPassword]= useState();
-
   //const[image, setImage] =useState("");
   const cloud_name = "dwkdymju4";
   const upload_preset ="blog test image 00";
-
     const addBlog=()=>{
       //axios.get
       axios.post('http://localhost:3000/api/posts/addOnePost', {
@@ -26,7 +22,6 @@ const Form = () => {
         image: imageUrl,
         userId:1,
         likes:0,
-  
       })
       //window.location.reload()
       .then(function (response) {
@@ -39,7 +34,6 @@ const Form = () => {
     const handleClick=async()=>{
       const {files} =document.querySelector(".app_uploadInput");
       const formData = new FormData();
-  
       formData.append("file", files[0]);
       formData.append("upload_preset", upload_preset);
       const options={
@@ -47,14 +41,12 @@ const Form = () => {
         body: formData,
       };
      fetch(`https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`,
-      options 
+      options
       )
       .then((res)=> res.json())
       .then((res)=> setImageUrl(res.secure_url))
       .catch((err)=>console.log(err))
     }
-
-  
   return(
     <div className="app">
       <div>
@@ -75,42 +67,9 @@ const Form = () => {
 <button type="submit" onClick={addBlog}>Submit</button>
 {/* <div type="file" className="app_downloadImg">
 <img src={imageUrl} className="app_downloadImg"/>
-  
 </div> */}
 </div>
-
-import React, {useState} from 'react'
-import axios from 'axios'
-
-const Form = () => {
-
-const [title ,setTitle] = useState("")
-const [content , setContent] = useState("")
-
-const addBlog = () => {
-  axios.post("http://localhost:3000/api/posts/addOnePost" , {title:title , content:content})
-  .then(result => console.log(result))
-  .catch(error => console.log(error));
-}
-
-
-  return (
-    <div className="card">
-    <div className='card-image'>
-      <div className='input'>
-      <input placeholder='Title' className='input-field' onChange={(e) => {setTitle(e.target.value)} }/>
-      </div>
-      <div className='input'>
-      <textarea placeholder='Content ...' className='input-field' onChange={(e) => {setContent(e.target.value)} }/>
-      </div>
-      <button onClick={() => {addBlog()}}>Add Blog</button>
-    </div>
-
     </div>
   )
 }
-
-
 export default Form;
-
-
