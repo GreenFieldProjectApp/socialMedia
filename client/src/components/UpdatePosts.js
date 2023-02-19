@@ -17,8 +17,8 @@ const UpdatePosts = (props) => {
   return (
     
     <div>
-       <textarea value={content} placeholder='update post' className='comment-input' onChange={(e) => {setContent(e.target.value)} }/>
-       <button className='update-button' onClick={() => {handlesubmit()}}>update that post</button> <br/> 
+    <textarea value={content} placeholder='update post' className='comment-input' onChange={(e) => {setContent(e.target.value)} }/><br/>
+    <button className='update-button' onClick={() => {handlesubmit()}}>update this post</button> <br/> 
     </div>
   )
 }

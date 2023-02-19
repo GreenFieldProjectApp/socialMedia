@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
      picture: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue : "fghjklm"
+      defaultValue : "https://moneysprite.com/sites/default/files/2022-03/Moneysprite-Avatar-male_11.png"
       
     
     }, 

@@ -25,11 +25,11 @@ const Login = (props) => {
 <div className="form">
   
   <div className="username">
-    <input type="text" placeholder="email" onChange={(e) => {setEmail(e.target.value)}}/>
+    <input type="text" placeholder="E-mail" onChange={(e) => {setEmail(e.target.value)}}/>
   </div>
   
   <div className="password">
-    <input type="text" placeholder="PASSWORD" onChange={(e) => {setPassword(e.target.value)}}/>
+    <input type="text" placeholder="PassWord" onChange={(e) => {setPassword(e.target.value)}}/>
   </div>
   <div className="login">
     <Link to="/home" 

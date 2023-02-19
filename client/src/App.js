@@ -42,6 +42,7 @@ const getUsers = () => {
   return (
 
   <BrowserRouter>
+  
   <div className="App">
     
        
@@ -67,7 +68,7 @@ const getUsers = () => {
         </div>
     
     </BrowserRouter>
-
+    
     );
 }
 
