@@ -1,21 +1,21 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-const Form = () => {
+const Form = (props) => {
+  console.log("props: ",props);
   const[title,setTitle]= useState("");
   const[content,setContent]= useState("");
-  const[userId,setUserId]=useState(0);
-  const[ imageUrl, setImageUrl] = useState("");
+  const[userId,setUserId]=useState(2);
+  const[ imageUrl, setImageUrl] = useState("https://www.lifewire.com/thmb/TRGYpWa4KzxUt1Fkgr3FqjOd6VQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/cloud-upload-a30f385a928e44e199a62210d578375a.jpg");
   const[likes,setLikes]=useState(0);
   const cloud_name = "dwkdymju4";
   const upload_preset ="blog test image 00";
     const addBlog=()=>{
-      //axios.get
       axios.post('http://localhost:3000/api/posts/addOnePost', {
         title: title,
         content: content,
         image: imageUrl,
-        userId:2,
+        userId:1,
         likes:0,
       })
       window.location.reload()
@@ -25,6 +25,7 @@ const Form = () => {
       .catch(function (error) {
         console.log(error);
       });
+      alert("Post Created!");
     }
     const handleClick=async()=>{
       const {files} =document.querySelector(".app_uploadInput");
@@ -41,25 +42,26 @@ const Form = () => {
       .then((res)=> res.json())
       .then((res)=> setImageUrl(res.secure_url))
       .catch((err)=>console.log(err))
+      alert("Image uploaded!");
     }
   return(
   <div >
+    <div className="app">
+      <input type="file"  className="app_uploadInput" id="upload"/>
+      <img style={{width:500, height:300 } }src={imageUrl}  className="app_uploadInput" id="img"/>
+      <button onClick={handleClick} id="upload">Upload Your Image</button>
+    </div>
       <div>
       <div className='input'>
-      <textarea placeholder="Title" className='input-field' onChange={(e) => {setTitle(e.target.value)} }/>
+      <input placeholder="Title" className='comment-inputt' onChange={(e) => {setTitle(e.target.value)} }/>
        </div>
        <div className='input'>
-       <textarea placeholder="Content ..." className='input-field' onChange={(e) => {setContent(e.target.value)} }/>
+       <textarea placeholder="Content ..." className='comment-inputt' onChange={(e) => {setContent(e.target.value)} }/>
        </div>
-       <div className='input'>
-       <textarea placeholder='User ID' className='input-field' onChange={(e) => {setUserId(e.target.value)} }/>
-       </div>
-    <div className="app">
-      <input type="file" /*lang="eng"*/ className="app_uploadInput"/>
-      <img style={{width:500, height:300}} src={imageUrl} className="app_uploadInput"/>
-      <button onClick={handleClick}>Upload Your Image</button>
-    </div>
-      <button type="submit" onClick={addBlog}>Submit</button>
+       {/* <div className='input'>
+       <input placeholder='User ID'  onChange={(e) => {setUserId(e.target.value)} } className="comment-inputt"/>
+       </div> */}
+      <button type="submit" className="delete-button" onClick={addBlog}>Submit</button>
   </div>
 </div>
   )
