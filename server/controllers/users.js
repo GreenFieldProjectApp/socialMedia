@@ -19,10 +19,9 @@ module.exports = {
   },
   getOneUser: async (req, res) => {
     try {
-      const user = await User.findByPk({
-        where: {userId: req.params.id},
-      });
+      const user = await User.findByPk(req.params.id);
       res.status(200).json(user);
+      
     } catch (error) {
       res.status(500).send(error);
     }

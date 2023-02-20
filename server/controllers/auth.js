@@ -31,12 +31,12 @@ module.exports = {
       );
       console.log("jwt",jwt)
       const options= {
-        expires: new Date(exp),
+        // expires: new Date(exp),
       // httpOnly make only the browser & our server can read the cookie
         httpOnly: true,
         sameSite: "lax"
       }
-       res.cookie("Authorization", jwtToken, options);
+       res.cookie("Authorization", jwtToken);
     //welcome 
       res.send({ message: "Welcome Back!", token: jwtToken,userWithEmail });}}
          }
