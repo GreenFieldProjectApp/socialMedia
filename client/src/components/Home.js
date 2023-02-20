@@ -10,7 +10,9 @@ import Form from './form.js'
 const Home = (props) => {
 
 const [view,setView] = useState("all")
-
+const data=props.logger.data
+console.log("ahaya",data)
+// console.log("ahaya 2",data.userWithEmail)
 
 const renderView = () => {
   if(view === 'all') {

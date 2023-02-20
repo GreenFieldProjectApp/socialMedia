@@ -1,6 +1,7 @@
 import React , {useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link ,Navigate,useNavigate} from 'react-router-dom'
 import axios from 'axios'
+
 
 
 const Register = (props) => {
@@ -10,13 +11,14 @@ const Register = (props) => {
   const [phoneNumber, setPhoneNumber] = useState('')
   const [password, setPassword] = useState('')
    
-
+const navigate=useNavigate()
 
 const User = () => {
   const obj = {fullName : fullName , email: email , phoneNumber:phoneNumber , password:password}
   axios.post("http://127.0.0.1:3000/api/auth/signup" , obj)
   .then((result) => {
     console.log(result);
+    navigate("/login")
   })
   .catch((error) => {console.log(error);})
 }
@@ -37,7 +39,7 @@ const User = () => {
     <input type="password" placeholder="Password" onChange={(e) => {setPassword(e.target.value)}}/>
   </div>
   <div className="login">
-    <Link to="/login" onClick={() => {User()}}><span>Register</span></Link>
+  <span onClick={() => {User()}}>Register</span>
   </div>
 </div>
   )

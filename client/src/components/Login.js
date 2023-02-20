@@ -1,6 +1,6 @@
 import React , {useState} from 'react'
 import { Link } from 'react-router-dom'
-
+import axios from 'axios'
 
 const Login = (props) => {
 
@@ -9,37 +9,38 @@ const Login = (props) => {
   const [password, setPassword] = useState('')
 //   const [loggerId , setLoggerId] = useState("")
    
+const body ={
+  email:email,
+  password:password
+}
 
+const getOneUser = () => {
+  axios.post(`http://127.0.0.1:3000/api/auth/signin`,body)
+  .then((result) => {
+    console.log(result);
+    
+    props.logger(result)
 
-// const getOneUser = (ID) => {
-//   axios.get(`http://127.0.0.1:3000/api/users/${ID}`)
-//   .then((result) => {
-//     console.log(result);
-//     setLogger(result)
-//   })
-//   .catch((error) => {console.log(error);})
-// }
+  })
+  .catch((error) => {console.log(error);})
+}
 
 
   return (
 <div className="form">
   
   <div className="username">
-    <input type="text" placeholder="E-mail" onChange={(e) => {setEmail(e.target.value)}}/>
+    <input type="email" placeholder="E-mail" onChange={(e) => {setEmail(e.target.value)}}/>
   </div>
   
   <div className="password">
-    <input type="text" placeholder="PassWord" onChange={(e) => {setPassword(e.target.value)}}/>
+    <input type="password" placeholder="PassWord" onChange={(e) => {setPassword(e.target.value)}}/>
   </div>
   <div className="login">
-    <Link to="/home" 
-    onClick={() => props.users.filter((el) => {
-       if(el.email === email && el.password === password) {
-        props.logger(el)
-        
-        }
-     })
-    }
+    <Link to="/home" onClick={()=>{
+      getOneUser()
+    }}
+    
     ><span>Sign In</span></Link>
   </div>
 </div>
